@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './sass/style.scss';
 
-const titleText = 'make blackout poetry';
+class MakeBlackoutPoetry extends Component {
+  render() {
+    return (
+      <div id='title-container'>
+        <span id='title-text'>make blackout poetry</span>
+      </div>
+    );
+  }
+};
 
 ReactDOM.render(
-  <div id='title-container'>
-    <span id='title-text'>{titleText}</span>
-  </div>,
-  document.getElementById('blackoutpoetry-maker')
+  <MakeBlackoutPoetry/>,
+  document.getElementById('blackoutpoetrymaker')
 );
