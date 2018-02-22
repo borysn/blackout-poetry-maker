@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -6,7 +7,7 @@ module.exports = {
     'react-hot-loader/patch'
   ],
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/build',
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -16,6 +17,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: ['html-loader']
       }
     ]
   },
@@ -23,10 +29,14 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html'
+    })
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './build',
     hot: true
   }
 };
