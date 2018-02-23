@@ -12,20 +12,23 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 
 module.exports = webpackMerge(commonConfig, {
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: extractSass.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader?sourceMap']
         })
-      }, {
+      },
+      {
         test: /\.css$/,
         use: extractCss.extract({
           fallback: 'style-loader',
           use: ['css-loader']
         })
-      }, {
+      },
+      {
         test: /\.woff(2)?$/,
         use: extractFonts.extract({
           loader: 'file-loader',
