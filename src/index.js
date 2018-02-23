@@ -24,5 +24,5 @@ class MakeBlackoutPoetry extends Component {
 
 ReactDOM.render(
   <MakeBlackoutPoetry/>,
-  document.getElementById('blackoutpoetrymaker')
+  document.getElementById('blackout-poetry-maker')
 );
