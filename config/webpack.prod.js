@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
+const commonConfig = require('./webpack.common.js');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -7,18 +9,9 @@ const extractSass = new ExtractTextPlugin('css/style.css');
 const extractCss = new ExtractTextPlugin('css/[name].[ext]');
 const extractFonts = new ExtractTextPlugin('fonts/[name].[ext]');
 
-module.exports = {
-  entry: [
-    './src/index.js',
-    'react-hot-loader/patch'
-  ],
+const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 
-  output: {
-    path: __dirname + '/build',
-    publicPath: '/',
-    filename: 'blackout-poetry-maker.js'
-  },
-
+module.exports = webpackMerge(commonConfig, {
   module: {
     rules: [{
         test: /\.(js|jsx)$/,
@@ -54,23 +47,13 @@ module.exports = {
     ]
   },
 
-  resolve: {
-    extensions: ['*', '.js', '.jsx', '.woff', '.woff2', '.css', '.scss']
-  },
-
   plugins: [
     extractSass,
     extractCss,
     extractFonts,
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
     })
   ],
-
-  devServer: {
-    contentBase: './build',
-    hot: true
-  }
-};
+});
