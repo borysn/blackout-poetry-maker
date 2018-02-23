@@ -5,6 +5,7 @@ import EditText from './components/edittext.jsx';
 import FormatText from './components/formattext.jsx';
 import Controls from './components/controls.jsx';
 import './sass/style.scss';
+import './assets/css/palanquin-font.css';
 
 class MakeBlackoutPoetry extends Component {
   render() {
