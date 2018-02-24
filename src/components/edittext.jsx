@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class EditText extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div id='edittext-container' className='section-container'>
@@ -8,7 +12,7 @@ class EditText extends Component {
           <span>2: edit text</span>
         </div>
         <div id='edittext'>
-          edit text
+          {this.props.poem.text}
         </div>
       </div>
     );
