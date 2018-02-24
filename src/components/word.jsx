@@ -11,9 +11,9 @@ class Word extends Component {
 
   render() {
     return (
-      <div id='word-container'>
-        <div id='word'>
-          <span id='word-value'>{this.state.value}</span>
+      <div className='word-container'>
+        <div className='word'>
+          <span className='word-value'>{this.state.value}</span>
         </div>
       </div>
     );
