@@ -2,6 +2,16 @@
 $width: 19em;
 $gap-height: 2em;
 $radius: .2em;
+$word-selected-bgcolor: #1e1e1e;
+$word-bgcolor: #000000;
+
+// mixins
+@mixin word-style() {
+  padding: 0 .2em;
+  margin: .1em;
+  border-radius: $radius;
+  font-weight: 700;
+}
 
 * {
   margin: 0;
@@ -50,16 +60,24 @@ body {
 
 .word-container {
   display: inline-block;
+  cursor: pointer;
 }
 
 .word {
-  background-color: #000000;
-  padding: 0 .2em;
-  margin: .1em;
-  border-radius: $radius;
-  font-weight: 700;
+  @include word-style();
+  background-color: $word-bgcolor;
 }
 
 .word:hover {
-  background-color: #1e1e1e;
+  background-color: $word-selected-bgcolor;
+}
+
+.word-selected {
+  @include word-style();
+  background-color: $word-selected-bgcolor;
+  border: .1em solid #ffffff;
+}
+
+.word-selected:hover {
+  background-color: $word-bgcolor;
 }
