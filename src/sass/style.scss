@@ -1,6 +1,7 @@
 // vars
 $width: 19em;
 $gap-height: 2em;
+$radius: .2em;
 
 * {
   margin: 0;
@@ -25,14 +26,19 @@ body {
   margin: 0 auto;
   width: $width;
   margin-bottom: $gap-height;
-  padding: 1em;
-  border-radius: .5em;
+  padding: .5em;
+  border-radius: $radius;
   overflow: hidden;
 }
 
 #title-container {
   text-align: center;
   font-weight: 700;
+}
+
+#inputtextarea {
+  border-radius: .5em;
+  padding: .1em;
 }
 
 #words {
@@ -50,7 +56,7 @@ body {
   background-color: #000000;
   padding: 0 .2em;
   margin: .1em;
-  border-radius: .2em;
+  border-radius: $radius;
   font-weight: 700;
 }
 
