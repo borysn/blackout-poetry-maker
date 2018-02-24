@@ -4,8 +4,6 @@ import InputText from './components/inputtext.jsx';
 import EditText from './components/edittext.jsx';
 import FormatText from './components/formattext.jsx';
 import Controls from './components/controls.jsx';
-import Poem from './components/poem.jsx';
-import Word from './components/word.jsx';
 
 class MakeBlackoutPoetry extends Component {
   constructor(props) {
