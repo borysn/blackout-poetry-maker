@@ -8,10 +8,6 @@ class EditText extends Component {
   }
 
   render() {
-    const words = this.props.poem.tokenizedText.map((w, i) => {
-      return (<Word key={i} value={w}/>);
-    });
-
     return (
       <div id='edittext-container' className='section-container'>
         <div className='section-title'>
@@ -19,7 +15,6 @@ class EditText extends Component {
         </div>
         <div id='edittext'>
           <Poem tokenizedText={this.props.poem.tokenizedText}/>
-          {words}
         </div>
       </div>
     );
