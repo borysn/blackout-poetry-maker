@@ -18,7 +18,7 @@ class InputText extends Component {
          <span>1: input text</span>
        </div>
        <div id='inputtext'>
-         <textarea id='inputtextarea' rows='5' cols='40' 
+         <textarea id='inputtextarea' rows='10' cols='40' 
            onChange={this.handleTextChange}>
          </textarea>
        </div>
