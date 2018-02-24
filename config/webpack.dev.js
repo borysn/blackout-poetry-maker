@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 
-const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
-
 module.exports = webpackMerge(commonConfig, {
   module: {
     rules: [
@@ -18,13 +16,16 @@ module.exports = webpackMerge(commonConfig, {
       },
       {
         test: /\.woff(2)?$/,
-        use: ['url-loader']
+        use: ['file-loader']
       }
     ]
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
   ],
 
   devServer: {
