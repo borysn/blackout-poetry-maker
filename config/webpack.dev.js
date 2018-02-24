@@ -8,15 +8,20 @@ module.exports = webpackMerge(commonConfig, {
     rules: [
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [{loader: 'style-loader'},
+              {loader: 'css-loader', options: {sourceMap: true}},
+              {loader: 'sass-loader', options: {sourceMap: true}}
+        ]
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [{loader: 'style-loader'},
+              {loader: 'css-loader', options: {sourceMap: true}}
+        ]
       },
       {
         test: /\.woff(2)?$/,
-        use: ['file-loader']
+        use: [{loader: 'file-loader', options: {name: 'assets/fonts/[name].[ext]'}}]
       }
     ]
   },

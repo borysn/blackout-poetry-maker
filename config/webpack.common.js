@@ -5,7 +5,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: [
     './src/index.js',
-    'react-hot-loader/patch'
+    'react-hot-loader/patch',
+    './src/assets/css/palanquin-font.css',
+    './src/sass/style.scss'
   ],
 
   output: {
@@ -23,7 +25,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: [{loader: 'babel-loader', options: {sourceMap: true}}]
       },
       {
         test: /\.html$/,
@@ -32,6 +34,8 @@ module.exports = {
       }
     ]
   },
+
+  devtool: 'source-map',
 
   plugins: [
     new HtmlWebPackPlugin({
