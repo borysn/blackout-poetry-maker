@@ -23,19 +23,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [{loader: 'babel-loader', options: {sourceMap: true}}]
-      },
-      {
         test: /\.html$/,
         exclude: /node_modules/,
         use: ['html-loader']
       }
     ]
   },
-
-  devtool: 'source-map',
 
   plugins: [
     new HtmlWebPackPlugin({

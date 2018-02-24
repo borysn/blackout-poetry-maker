@@ -7,6 +7,11 @@ module.exports = webpackMerge(commonConfig, {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [{loader: 'babel-loader', options: {sourceMap: true}}]
+      },
+      {
         test: /\.scss$/,
         use: [{loader: 'style-loader'},
               {loader: 'css-loader', options: {sourceMap: true}},
@@ -32,6 +37,8 @@ module.exports = webpackMerge(commonConfig, {
       'process.env.NODE_ENV': JSON.stringify('development')
     })
   ],
+
+  devtool: 'source-map',
 
   devServer: {
     contentBase: './build',
