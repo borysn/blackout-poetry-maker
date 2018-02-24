@@ -12,7 +12,7 @@ class EditText extends Component {
           <span>2: edit text</span>
         </div>
         <div id='edittext'>
-          {this.props.poem.text}
+          {this.props.poem.words}
         </div>
       </div>
     );

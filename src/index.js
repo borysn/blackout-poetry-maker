@@ -5,18 +5,39 @@ import EditText from './components/edittext.jsx';
 import FormatText from './components/formattext.jsx';
 import Controls from './components/controls.jsx';
 import Poem from './components/poem.jsx';
+import Word from './components/word.jsx';
 
 class MakeBlackoutPoetry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      poem: new Poem()
+      poem: {}
     };
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.getWords = this.getWords.bind(this);
+  }
+
+  getWords(text) {
+    let words = [];
+    const pattern = /[\w]+|[^\s\w]/g;
+    const matches = text.match(pattern);
+
+    for (let i = 0; i < matches.length; i++) {
+      words.push(<Word key={i.toString()} value={matches[i]}/>)
+    }
+
+    console.log(words);
+
+    return words;
   }
 
   handleTextChange(poemText) {
-    this.setState({poem: {text:poemText}});
+    this.setState({
+      poem: {
+        text: poemText,
+        words: this.getWords(poemText)
+      }
+    });
   }
 
   render() {
