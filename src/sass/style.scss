@@ -81,3 +81,27 @@ body {
 .word-selected:hover {
   background-color: $word-bgcolor;
 }
+
+.format-item {
+  @include word-style();
+  display: inline-block;
+  background-color: $word-bgcolor;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.format-item:hover {
+  background-color: $word-selected-bgcolor;
+}
+
+.format-item-selected {
+  @include word-style();
+  background-color: $word-selected-bgcolor;
+  border: .1em solid #ffffff;
+  display: inline-block;
+  font-size: 2em;
+}
+
+.format-item-selected:hover {
+  background-color: $word-bgcolor;
+}
