@@ -19,9 +19,7 @@ class InputText extends Component {
          <span className='section-title-text'>input text</span>
        </div>
        <div id='inputtext'>
-         <textarea id='inputtextarea' rows='8' cols='41' 
-           onChange={this.handleTextChange}>
-         </textarea>
+         <textarea id='inputtextarea' onChange={this.handleTextChange}></textarea>
        </div>
       </div>
     )
