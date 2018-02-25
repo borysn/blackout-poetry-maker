@@ -23,6 +23,10 @@ module.exports = webpackMerge(commonConfig, {
           fallback: 'style-loader',
           use: [
             {loader: 'css-loader', options: {url: false, minimize: true}},
+            {
+              loader: 'postcss-loader', 
+              options: {config:{path:'config/postcss.config.js'}}
+            },
             {loader:'sass-loader'}]
         })
       }

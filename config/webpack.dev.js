@@ -12,21 +12,22 @@ module.exports = webpackMerge(commonConfig, {
         use: [{loader: 'babel-loader', options: {sourceMap: true}}]
       },
       {
-        test: /\.scss$/,
-        use: [{loader: 'style-loader'},
-              {loader: 'css-loader', options: {sourceMap: true}},
-              {loader: 'sass-loader', options: {sourceMap: true}}
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [{loader: 'style-loader'},
-              {loader: 'css-loader', options: {sourceMap: true}}
+        test: /\.(scss|css)$/,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader', options: {sourceMap: true}},
+          {
+            loader: 'postcss-loader', 
+            options: {config:{path:'config/postcss.config.js'}, sourceMap: true}
+          },
+          {loader: 'sass-loader', options: {sourceMap: true}}
         ]
       },
       {
         test: /\.woff(2)?$/,
-        use: [{loader: 'file-loader', options: {name: 'assets/fonts/[name].[ext]'}}]
+        use: [
+          {loader: 'file-loader', options: {name: 'assets/fonts/[name].[ext]'}}
+        ]
       }
     ]
   },
