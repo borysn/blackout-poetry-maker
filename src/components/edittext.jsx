@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import Poem from './poem.jsx';
-import Word from './word.jsx';
+import React, {Component} from 'react'
+import Poem from './poem.jsx'
+import Word from './word.jsx'
 
 class EditText extends Component {
   constructor(props) {
-    super(props);
-    this.handleTextEdit = this.handleTextEdit.bind(this);
+    super(props)
+    this.handleTextEdit = this.handleTextEdit.bind(this)
   }
 
   handleTextEdit(indices) {
-    this.props.onTextEdit(indices);
+    this.props.onTextEdit(indices)
   }
 
   render() {
@@ -22,8 +22,8 @@ class EditText extends Component {
           <Poem tokenizedText={this.props.poem.tokenizedText} onTextEdit={this.handleTextEdit} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default EditText;
+export default EditText

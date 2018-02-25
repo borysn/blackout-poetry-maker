@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class InputText extends Component {
   constructor(props) {
-    super(props);
-    this.handleTextChange = this.handleTextChange.bind(this);
+    super(props)
+    this.handleTextChange = this.handleTextChange.bind(this)
   }
 
   handleTextChange(e) {
-    setTimeout(1000);
-    this.props.onTextChange(e.target.value);
+    setTimeout(1000)
+    this.props.onTextChange(e.target.value)
   }
 
   render() {
@@ -23,8 +23,8 @@ class InputText extends Component {
          </textarea>
        </div>
       </div>
-    );
+    )
   }
 }
 
-export default InputText;
+export default InputText

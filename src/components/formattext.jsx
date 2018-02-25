@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import FormatItem from './formatitem.jsx';
+import React, {Component} from 'react'
+import FormatItem from './formatitem.jsx'
 
 class FormatText extends Component {
   constructor(props) {
@@ -8,12 +8,12 @@ class FormatText extends Component {
       formats: ['░', '▒', '▓', '█'],
       selected: 3
     }
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle(e, char, index) {
-    this.setState({selected: index});
-    this.props.onChangeFormat(char);
+    this.setState({selected: index})
+    this.props.onChangeFormat(char)
   }
 
   render() {
@@ -26,8 +26,8 @@ class FormatText extends Component {
           value={v}
           toggle={this.toggle}
         />
-      );
-    });
+      )
+    })
 
     return (
       <div id='formattext-container' className='section-container'>
@@ -40,8 +40,8 @@ class FormatText extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default FormatText;
+export default FormatText

@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class FinalText extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -15,8 +15,8 @@ class FinalText extends Component {
           <span id='finaltext-value'>{this.props.poem.finaltext}</span>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default FinalText;
+export default FinalText

@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class Word extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       selected: false
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
-    this.setState({selected: (this.state.selected ? false : true)});
-    this.props.onTextEdit(!this.state.selected, this.props.index);
+    this.setState({selected: (this.state.selected ? false : true)})
+    this.props.onTextEdit(!this.state.selected, this.props.index)
   }
 
   render() {
@@ -21,8 +21,8 @@ class Word extends Component {
           <span className='word-value'>{this.props.value}</span>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Word;
+export default Word

@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 class FormatItem extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       selected: props.selected
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
-    this.props.toggle(e, this.props.value, this.props.index);
+    this.props.toggle(e, this.props.value, this.props.index)
   }
 
   render() {
@@ -19,8 +19,8 @@ class FormatItem extends Component {
         onClick={this.handleClick}>
         <span className='format-item-value'>{this.props.value}</span>
       </div>
-    );
+    )
   }
 }
 
-export default FormatItem;
+export default FormatItem
