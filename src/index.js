@@ -91,7 +91,6 @@ class MakeBlackoutPoetry extends Component {
         <EditText poem={this.state.poem} onTextEdit={this.handleTextEdit}/>
         <FormatText onChangeFormat={this.handleFormatChange}/>
         <FinalText poem={this.state.poem}/>
-        <Controls/>
       </div>
     )
   }
