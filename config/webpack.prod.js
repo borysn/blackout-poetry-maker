@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin('assets/css/style.css');
 
@@ -35,6 +36,9 @@ module.exports = webpackMerge(commonConfig, {
     ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new UglifyJsPlugin({
+      test: /\.js($|\?)/i
     })
   ],
 });
