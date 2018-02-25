@@ -4,6 +4,7 @@ $gap-height: 2em;
 $radius: .2em;
 $word-selected-bgcolor: #1e1e1e;
 $word-bgcolor: #000000;
+$text-color: #6e6e6e;
 
 // mixins
 @mixin word-style() {
@@ -28,7 +29,7 @@ $word-bgcolor: #000000;
 
 body {
   background-color: #000000;
-  color: #6e6e6e;
+  color: $text-color;
   font-family: Palanquin;
   font-size: 1em;
   font-weight: 200;
@@ -123,4 +124,19 @@ body {
 
 #finaltext-value {
   user-select: all;
+}
+
+#footer {
+  margin: 0 auto;
+  width: 12em;
+  text-align: center;
+}
+
+.footer-item > a:link {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.footer-item > a:visited {
+  color: $text-color;
 }
