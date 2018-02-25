@@ -5,6 +5,11 @@ import Word from './word.jsx';
 class EditText extends Component {
   constructor(props) {
     super(props);
+    this.handleTextEdit = this.handleTextEdit.bind(this);
+  }
+
+  handleTextEdit(indices) {
+    this.props.onTextEdit(indices);
   }
 
   render() {
@@ -14,7 +19,7 @@ class EditText extends Component {
           <span>2: edit text</span>
         </div>
         <div id='edittext'>
-          <Poem tokenizedText={this.props.poem.tokenizedText}/>
+          <Poem tokenizedText={this.props.poem.tokenizedText} onTextEdit={this.handleTextEdit} />
         </div>
       </div>
     );

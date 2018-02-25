@@ -11,6 +11,7 @@ class Word extends Component {
 
   handleClick(e) {
     this.setState({selected: (this.state.selected ? false : true)});
+    this.props.onTextEdit(!this.state.selected, this.props.index);
   }
 
   render() {
