@@ -9,7 +9,8 @@ class FinalText extends Component {
     return (
       <div id='finaltext-container' className='section-container'>
         <div className='section-title'>
-          <span>4: final text</span>
+          <span className='section-title-num'>4</span>
+          <span className='section-title-text'>final text</span>
         </div>
         <div id='finaltext'>
           <span id='finaltext-value'>{this.props.poem.finaltext}</span>

@@ -15,10 +15,11 @@ class InputText extends Component {
     return (
       <div id='inputtext-container' className='section-container'>
        <div className='section-title'>
-         <span>1: input text</span>
+         <span className='section-title-num'>1</span>
+         <span className='section-title-text'>input text</span>
        </div>
        <div id='inputtext'>
-         <textarea id='inputtextarea' rows='10' cols='40' 
+         <textarea id='inputtextarea' rows='8' cols='41' 
            onChange={this.handleTextChange}>
          </textarea>
        </div>

@@ -16,7 +16,8 @@ class EditText extends Component {
     return (
       <div id='edittext-container' className='section-container'>
         <div className='section-title'>
-          <span>2: edit text</span>
+          <span className='section-title-num'>2</span>
+          <span className='section-title-text'>edit text</span>
         </div>
         <div id='edittext'>
           <Poem tokenizedText={this.props.poem.tokenizedText} onTextEdit={this.handleTextEdit} />

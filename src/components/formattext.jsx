@@ -32,7 +32,8 @@ class FormatText extends Component {
     return (
       <div id='formattext-container' className='section-container'>
         <div className='section-title'>
-          <span>3: format text</span>
+          <span className='section-title-num'>3</span>
+          <span className='section-title-text'>format text</span>
         </div>
         <div id='formattext'>
           <div id='format-item-container'>
