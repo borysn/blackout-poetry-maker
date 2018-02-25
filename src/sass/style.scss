@@ -24,7 +24,6 @@ $text-color: #6e6e6e;
 * {
   margin: 0;
   padding: 0;
-  user-select: none;
 }
 
 body {
@@ -48,6 +47,10 @@ body {
   padding: .5em;
   border-radius: $radius;
   overflow: hidden;
+}
+
+.section-title {
+  user-select: none;
 }
 
 #title-container {
@@ -123,7 +126,6 @@ body {
 }
 
 #finaltext-value {
-  user-select: all;
 }
 
 #footer {
