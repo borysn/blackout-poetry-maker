@@ -39,7 +39,6 @@ class MakeBlackoutPoetry extends Component {
 
   formatFinalText(words, indices, format) {
     let text = '';
-    console.log(indices);
     words.map((v, i) => {
       if (indices.indexOf(i) != -1) {
         text += v;
