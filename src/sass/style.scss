@@ -88,6 +88,11 @@ body {
   background-color: $word-bgcolor;
 }
 
+#format-item-container {
+  margin: 0 auto;
+  width: 12em;
+}
+
 .format-item {
   @include word-style();
   display: inline-block;
