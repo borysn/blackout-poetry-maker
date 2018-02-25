@@ -11,8 +11,9 @@ class FormatText extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle(e, index) {
+  toggle(e, char, index) {
     this.setState({selected: index});
+    this.props.onChangeFormat(char);
   }
 
   render() {

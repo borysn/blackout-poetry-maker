@@ -13,9 +13,17 @@ $word-bgcolor: #000000;
   font-weight: 700;
 }
 
+@mixin wrap-word() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+// styles
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 body {
@@ -52,10 +60,8 @@ body {
 }
 
 #words {
+  @include wrap-word();
   overflow: hidden;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
 }
 
 .word-container {
@@ -104,4 +110,12 @@ body {
 
 .format-item-selected:hover {
   background-color: $word-bgcolor;
+}
+
+#finaltext {
+  @include wrap-word();
+}
+
+#finaltext-value {
+  user-select: all;
 }

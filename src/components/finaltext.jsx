@@ -12,7 +12,7 @@ class FinalText extends Component {
           <span>4: final text</span>
         </div>
         <div id='finaltext'>
-          <span id='finaltext-value'>final text</span>
+          <span id='finaltext-value'>{this.props.poem.finaltext}</span>
         </div>
       </div>
     );

@@ -10,7 +10,7 @@ class FormatItem extends Component {
   }
 
   handleClick(e) {
-    this.props.toggle(e, this.props.index);
+    this.props.toggle(e, this.props.value, this.props.index);
   }
 
   render() {
