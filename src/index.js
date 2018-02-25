@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import InputText from './components/inputtext.jsx';
 import EditText from './components/edittext.jsx';
 import FormatText from './components/formattext.jsx';
+import FinalText from './components/finaltext.jsx';
 import Controls from './components/controls.jsx';
 
 class MakeBlackoutPoetry extends Component {
@@ -35,6 +36,7 @@ class MakeBlackoutPoetry extends Component {
         <InputText onTextChange={this.handleTextChange}/>
         <EditText poem={this.state.poem}/>
         <FormatText poem={this.state.peom}/>
+        <FinalText />
         <Controls/>
       </div>
     );
