@@ -45,6 +45,7 @@ class MakeBlackoutPoetry extends Component {
       } else {
         text += v.replace(/./g, format);
       }
+      text += ' ';
     });
     return text;
   }
