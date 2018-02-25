@@ -77,7 +77,7 @@ class MakeBlackoutPoetry extends Component {
       this.state.poem.tokenizedText,
       this.state.poem.selections,
       format,
-      this.formatFinalText(this.state.poem.tokenizedText, this.state.poem.selected, format)
+      this.formatFinalText(this.state.poem.tokenizedText, this.state.poem.selections, format)
     );
   }
 
