@@ -1,2 +1,2 @@
-# blackoutpoetry-maker
+# blackout-poetry-maker
 create blackout poetry
