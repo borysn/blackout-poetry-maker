@@ -16,6 +16,7 @@ class MakeBlackoutPoetry extends Component {
     this.formatFinalText = this.formatFinalText.bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
     this.handleClear = this.handleClear.bind(this);
+    this.handlePaste = this.handlePaste.bind(this);
     this.handleTextEdit = this.handleTextEdit.bind(this)
     this.handleFormatChange = this.handleFormatChange.bind(this)
   }
@@ -65,6 +66,17 @@ class MakeBlackoutPoetry extends Component {
     this.changeState('', [], [], this.state.poem.format, '')
   }
 
+  handlePaste(text) {
+    let tokenizedText = this.getTokenizedText(text)
+    this.changeState(
+      text,
+      tokenizedText,
+      [],
+      this.state.poem.format,
+      this.formatFinalText(tokenizedText, [], this.state.poem.format)
+    )
+  }
+
   handleTextEdit(indices) {
     this.changeState(
       this.state.poem.text,
@@ -91,7 +103,8 @@ class MakeBlackoutPoetry extends Component {
         <div id='title-container' className='section-container'>
           <span id='title-text'>make blackout poetry</span>
         </div>
-        <InputText onTextChange={this.handleTextChange} onClear={this.handleClear}/>
+        <InputText onTextChange={this.handleTextChange} onClear={this.handleClear}
+          onPaste={this.handlePaste}/>
         <EditText indices={this.state.poem.selections}
           poem={this.state.poem} onTextEdit={this.handleTextEdit}/>
         <FormatText onChangeFormat={this.handleFormatChange}/>
