@@ -20,7 +20,8 @@ class EditText extends Component {
           <span className='section-title-text'>edit text</span>
         </div>
         <div id='edittext'>
-          <Poem tokenizedText={this.props.poem.tokenizedText} onTextEdit={this.handleTextEdit} />
+          <Poem indices={this.props.indices}
+            tokenizedText={this.props.poem.tokenizedText} onTextEdit={this.handleTextEdit} />
         </div>
       </div>
     )

@@ -4,20 +4,16 @@ import Word from './word.jsx'
 class Poem extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selections: []
-    }
     this.handleTextEdit = this.handleTextEdit.bind(this)
   }
 
   handleTextEdit(didSelect, index) {
-    let indices = this.state.selections
+    let indices = this.props.indices
     if (didSelect) {
       indices.push(index)
     } else {
       indices.splice(indices.indexOf(index), 1)
     }
-    this.setState({selections: indices})
     this.props.onTextEdit(indices)
   }
 

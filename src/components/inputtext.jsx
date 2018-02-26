@@ -5,7 +5,6 @@ class InputText extends Component {
     super(props)
     this.handleTextChange = this.handleTextChange.bind(this)
     this.handleClear = this.handleClear.bind(this)
-    this.handlePaste = this.handlePaste.bind(this)
     this.setText = this.setText.bind(this)
   }
 
@@ -22,10 +21,6 @@ class InputText extends Component {
     this.setText('')
   }
 
-  handlePaste(e) {
-    this.props.onPaste(e.target.value)
-  }
-
   render() {
     return (
       <div id='inputtext-container' className='section-container'>
@@ -34,8 +29,8 @@ class InputText extends Component {
           <span className='section-title-text'>input text</span>
         </div>
         <div id='inputtext'>
-          <textarea id='inputtextarea' placeholder='paste here'
-            onChange={this.handleTextChange} onPaste={this.handlePaste}></textarea>
+          <textarea id='inputtextarea' placeholder='paste here' 
+            onChange={this.handleTextChange} ></textarea>
         </div>
         <div className='controls'>
           <div className='control' onClick={this.handleClear}>
