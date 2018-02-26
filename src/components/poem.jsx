@@ -19,7 +19,11 @@ class Poem extends Component {
 
   render() {
     const words = this.props.tokenizedText.map((w, i) => {
-      return (<Word key={i} value={w} index={i} onTextEdit={this.handleTextEdit} />)
+      let selected = this.props.indices.indexOf(i) != -1 ? true : false
+      return (
+        <Word key={i} value={w} index={i} selected={selected}
+          onTextEdit={this.handleTextEdit}/>
+      )
     })
 
     return (
