@@ -9,6 +9,10 @@ class InputText extends Component {
     this.setText = this.setText.bind(this)
   }
 
+  componentDidMount() {
+    document.getElementById('inputtextarea').focus()
+  }
+
   handleTextChange(e) {
     this.props.onTextChange(e.target.value)
   }
@@ -34,7 +38,7 @@ class InputText extends Component {
           <span className='section-title-text'>input text</span>
         </div>
         <div id='inputtext'>
-          <textarea id='inputtextarea' placeholder='paste here'
+          <textarea autofocus id='inputtextarea' placeholder='paste here'
             onPaste={this.handlePaste} onChange={this.handleTextChange} >
           </textarea>
         </div>
