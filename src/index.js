@@ -67,7 +67,6 @@ class MakeBlackoutPoetry extends Component {
   }
 
   handlePaste(text) {
-    console.log(text);
     this.changeState(text, this.getTokenizedText(text), [], this.state.poem.format, '');
   }
 
