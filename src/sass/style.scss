@@ -70,6 +70,29 @@ body {
   width: 9em;
 }
 
+.controls {
+  text-align: center;
+  user-select: none;
+}
+
+.control {
+  background-color: $word-bgcolor;
+  border-radius: $radius;
+  border: .1em solid #ffffff;
+  display: inline-block;
+  margin: .7em 1em;
+  padding: .2em .7em;
+  cursor: pointer;
+}
+
+.control:hover {
+  background-color: $word-selected-bgcolor;
+}
+
+.control-text {
+  font-weight: 700;
+}
+
 #title-container {
   text-align: center;
   font-weight: 700;
